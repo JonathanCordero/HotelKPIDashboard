@@ -1,7 +1,18 @@
-document.getElementById("calculateBtn").addEventListener("click", () => {
-    const tra = parseFloat(document.getElementById("tra").value);
-    const roomsSold = parseFloat(document.getElementById("roomsSold").value);
-    const trr = parseFloat(document.getElementById("trr").value);
+document.addEventListener("DOMContentLoaded", ()=>{
+    const totalRoomsAvailableInput = document.getElementById("tra");
+    const roomsSoldInput = document.getElementById("roomsSold");
+    const totalRoomRevenueInput = document.getElementById("trr");
+    const calculateBtn = document.getElementById("calculateBtn");
+
+    const occupancyRateR1= document.getElementById("occupancyRate");
+    const adrR1= document.getElementById("adr");
+    const revparR1= document.getElementById("revpar");
+    const resultSection = document.querySelector('section[aria-labelledby="results"]');
+
+    calculateBtn.addEventListener("click", () => {
+    const tra = parseFloat(totalRoomsAvailableInput.value);
+    const roomsSold = parseFloat(roomsSoldInput.value);
+    const trr = parseFloat(totalRoomRevenueInput.value);
 
     if (isNaN(tra) || isNaN(roomsSold) || isNaN(trr) 
         || tra<=0 || roomsSold<0 || trr<0){
@@ -26,8 +37,12 @@ document.getElementById("calculateBtn").addEventListener("click", () => {
     const adr =  trr / roomsSold;
     const revpar = trr / tra;
 
-    document.getElementById("occupancyRate").textContent = occupancyRate.toFixed(2);
-    document.getElementById("adr").textContent = adr.toFixed(2);
-    document.getElementById("revpar").textContent = revpar.toFixed(2);
+    occupancyRateR1.textContent = occupancyRate.toFixed(2);
+    adrR1.textContent = adr.toFixed(2);
+    revparR1.textContent = revpar.toFixed(2);
 
-});
+    resultSection.classList.remove("results-highlight");
+    void resultSection.offsetWidth;
+    resultSection.classList.add("results-highlight");
+    });
+})
