@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Hotel KPI Dashboard</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        <h1>Hotel Kpi Dashboard</h1>
+        <div class="DashBoard">
+            <div class="inputs">
+                <h2>Enter your data</h2>
+                <label>Total Rooms Available: <input type="number" id="tra" placeholder="e.g.: 100"></label>
+                <label>Rooms Sold: <input type="number" id="roomsSold" placeholder="e.g.: 100"></label>
+                <label>Total Room Revenue: <input type="number" id ="trr" placeholder="e.g.:100"></label>
+                <button id="calculateBtn">Calculate KPI</button>
+            </div>
+
+            <div class="results">
+                <h2>Results</h2>
+                <p>Occupany Rate: <span id="occupancyRate"></span>%</p>
+                <p>Average Daily Rate: $<span id="adr"></span></p>
+                <p>Revenue Per Available Room: $<span id="revpar"></span></p>
+            </div>
+        </div> 
+        <script src="script.js" defer></script>
+    </body>
+</html>
